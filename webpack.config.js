@@ -6,8 +6,7 @@ module.exports = {
     devServer: {
         contentBase: path.join('public'),
         publicPath: '/',
-        compress: true,
-        port: 8080
+        compress: true
     },
     mode: 'none',
     entry: [ './src/app.js' ],
