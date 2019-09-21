@@ -34,7 +34,7 @@
               v-bind:class="{ 'night': nightMode, 'light': !nightMode }"
             >
               <v-card-text class="mx-0">
-                <v-img aspect-ratio="2" position="center" contain :src="n.Poster"></v-img>
+                <v-img aspect-ratio="2" position="end" contain :src="n.Poster"></v-img>
               </v-card-text>
 
               <v-card-title>{{n.Title}}</v-card-title>
