@@ -4,9 +4,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        app: './src/app.js'
-    },
+    entry: ['babel-polyfill', './src/app.js'],
     module: {
         rules: [
             {
@@ -15,6 +13,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 use: 'babel-loader'
             },
             {
@@ -41,9 +40,15 @@ module.exports = {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: ['file-loader'],
             },
-            { test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader?name=src/css/[name].[ext]'}
+            { test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader?name=src/css/[name].[ext]' }
 
         ]
+    },
+    node: {
+        net: 'empty',
+        tls: 'empty',
+        dns: 'empty',
+        fs:  'empty'
     },
     plugins: [
         new VueLoaderPlugin(),

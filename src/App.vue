@@ -25,19 +25,35 @@
       </v-alert>
       <v-container grid-list-sm>
         <v-row>
-          <v-col v-for="n in 4" :key="n" md="3">
-            <v-card hover="true" elevation="15">
-              <v-img src="https://picsum.photos/510/300?random"></v-img>
-              <v-card-title>I'm a title</v-card-title>
-              <v-card-text>Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi...</v-card-text>
-               <v-rating 
-                v-model="rating" 
-                background-color="purple lighten-3" 
-                color="purple"
-                small >
-                </v-rating>
+          <v-col v-for="n in movies" :key="n.imdbID" md="4">
+            <v-card
+              elevation="15"
+              height="100%"
+              :light="nightMode"
+              :dark="nightMode"
+              v-bind:class="{ 'night': nightMode, 'light': !nightMode }"
+            >
+              <v-card-text class="mx-0">
+                <v-img aspect-ratio="2" position="center" contain :src="n.Poster"></v-img>
+              </v-card-text>
+
+              <v-card-title>{{n.Title}}</v-card-title>
+              <v-card-text>{{n.Plot}}</v-card-text>
+              <v-card-text>
+                <strong>IMDB</strong>
+                <span class="grey--text text--lighten-2 caption mr-2">({{ n.imdbRating }})</span>
+                <v-rating
+                  :length="`10`"
+                  v-model="n.imdbRating"
+                  color="yellow accent-4"
+                  dense
+                  half-increments
+                  hover
+                  size="18"
+                ></v-rating>
+              </v-card-text>
+
               <v-card-actions>
-               
                 <v-btn text icon color="pink">
                   <v-icon>mdi-heart-outline</v-icon>
                 </v-btn>
@@ -59,7 +75,7 @@
           <v-card-title class="headline">About EXCEPTION</v-card-title>
 
           <v-card-text>
-            <v-alert outlined color="purple">
+            <v-alert outlined color="blue">
               <div class="title">Lorem Ipsum</div>
               <div>Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Duis vel nibh at velit scelerisque suscipit. Praesent blandit laoreet nibh. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros.</div>
             </v-alert>
@@ -67,7 +83,7 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" text @click="dialog = false">OK</v-btn>
+            <v-btn color="blue darken-1" text @click="dialog = false">OK</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -83,15 +99,32 @@
   </v-app>
 </template>
 <script>
+import axios from "axios";
+import movie from "node-movie";
+
 export default {
   data: () => ({
+    movies: [],
+    tops: ["fury", "avengers", "spider man 3", "avatar", "batman", "inception"],
     appTitle: "Awesome App",
     rating: 4,
     sidebar: false,
     name: "ARSHAVIR",
     nightMode: true,
     dialog: false
-  })
+  }),
+  mounted() {
+    this.getMovies();
+  },
+  methods: {
+    getMovies() {
+      this.tops.forEach(elem => {
+        movie(elem, data => {
+          this.movies.push(data);
+        });
+      });
+    }
+  }
 };
 </script>
 <style >
@@ -108,20 +141,8 @@ export default {
   background-color: azure !important;
 }
 @font-face {
-  font-family: "Product-Font-Bold";
-  src: url("/assets/fonts/Product Sans Bold.ttf");
-}
-@font-face {
-  font-family: "Product-Font-Bold-Italic";
-  src: url("/assets/fonts/Product Sans Bold Italic.ttf");
-}
-@font-face {
-  font-family: "Product-Font-Italic";
-  src: url("/assets/fonts/Product Sans Italic.ttf");
-}
-@font-face {
   font-family: "Product-Font-Regular";
-  src: url("/assets/fonts/Product Sans Regular.ttf");
+  src: url("../assets/fonts/Product Sans Regular.ttf");
 }
 
 * {
