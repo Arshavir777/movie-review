@@ -3,7 +3,7 @@
     <v-card v-bind:class="{ 'night': nightMode, 'light': !nightMode }" :elevation="`10`">
       <div class="navbar">
         <div class="ml-1">
-          <v-btn outlined color="success" to="/home" text>MOVIE *_*</v-btn>
+          <v-btn outlined color="success" to="/" text>MoVIE</v-btn>
         </div>
         <div>
           <v-switch
