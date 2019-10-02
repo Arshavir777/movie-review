@@ -7,7 +7,10 @@
   
   <h3 align="center">MOVIE REVIEW</h3>
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="logo.png" alt="Logo" width="10%" height="10%">
+    <img src="logo.png" alt="Logo" width="33%" height="20%">
+    <img src="Screenshot from 2019-10-03 00-34-00.png" alt="Logo" width="33%" height="20%">
+    <img src="Screenshot from 2019-10-03 00-34-00.png" alt="Logo" width="33%" height="20%">
+  
   </a>
 
 ## Build with
