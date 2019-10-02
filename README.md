@@ -1,8 +1,6 @@
-[![Build Status][build-shield]][build-url]
-[![Contributors][contributors-shield]][contributors-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
+[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
+[![Node version](https://img.shields.io/node/v/[vue].svg?style=flat)](http://nodejs.org/download/)
+<br />
 
 
 <!-- PROJECT LOGO -->
