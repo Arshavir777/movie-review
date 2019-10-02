@@ -1,6 +1,6 @@
 <template>
   <div v-bind:class="{ 'night': theme, 'light': !theme }">
-    <v-container grid-list-sm>
+    <v-container grid-list-sm >
       <v-alert border="left" outlined color="blue" class="mt-4">
         <div class="title">Lorem Ipsum</div>
         <div>Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Duis vel nibh at velit scelerisque suscipit. Praesent blandit laoreet nibh. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros.</div>
@@ -26,7 +26,7 @@
               <span class="grey--text text--lighten-2 caption mr-2">({{ n.imdbRating }})</span>
               <v-rating
                 :length="`10`"
-                :v-model="`7`"
+                v-model="n.imdbRating"
                 color="yellow accent-4"
                 dense
                 half-increments
