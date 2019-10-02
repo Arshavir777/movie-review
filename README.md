@@ -12,9 +12,14 @@
 
 
 
-## Getting start 
+# Getting start 
+## Installation 
 ```
 $ git clone https://github.com/Arshavir777/test-repository.git
 $ cd test-repository
-$ npm start
+$ npm install
+```
+## Serve on development environment
+```
+$  npm run dev 
 ```
