@@ -6,11 +6,14 @@
 <p align="center">
   
   <h3 align="center">MOVIE REVIEW</h3>
-  <div style="display:flex">
-    <img src="logo.png" alt="Logo" width="33%" height="20%">
-    <img src="Screenshot from 2019-10-03 00-34-00.png" alt="Logo" width="33%" height="20%">
-    <img src="Screenshot from 2019-10-03 00-34-00.png" alt="Logo" width="33%" height="20%">
-  </div>
+  <a>
+      <div >
+        <img src="logo.png" alt="Logo" width="30%" height="150px">
+        <img src="Screenshot from 2019-10-03 00-34-00.png" alt="Logo" width="30%" height="150px">
+        <img src="Screenshot from 2019-10-03 00-34-00.png" alt="Logo" width="30%" height="150px">
+     </div>
+  </a>
+</p>
 ## Build with
 <ul>
   <li> <a href="https://webpack.org/"> Webpack </a> </li>
@@ -19,6 +22,7 @@
 </ul>
 
 # Getting start 
+##################################################
 ## Installation 
 ```
 $ git clone https://github.com/Arshavir777/test-repository.git
