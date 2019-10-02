@@ -7,10 +7,15 @@
   
   <h3 align="center">MOVIE REVIEW</h3>
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="logo.png" alt="Logo" width="100%" height="100%">
+    <img src="logo.png" alt="Logo" width="10%" height="10%">
   </a>
 
-
+## Build with
+<ul>
+  <li> <a href="https://webpack.org/"> Webpack </a> </li>
+  <li> <a href="https://vuejs.org/"> Vue </a> </li>
+  <li> <a href="https://vuetifyjs.com"> Vuetify </a> </li>
+</ul>
 
 # Getting start 
 ## Installation 
@@ -22,4 +27,8 @@ $ npm install
 ## Serve on development environment
 ```
 $  npm run dev 
+```
+## Deployment
+```
+$  npm run build 
 ```
