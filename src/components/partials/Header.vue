@@ -1,7 +1,8 @@
 <template>
   <div>
-    <v-toolbar
+    <v-app-bar
       fixed="true"
+      height="50px"
       src="https://www.ubackground.com/_ph/22/443371895.jpg"
       dark
       :elevation="`10`"
@@ -16,13 +17,12 @@
       </v-toolbar-title>
 
       <div class="flex-grow-1"></div>
-
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    </v-toolbar>
+    </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
       absolute
@@ -31,11 +31,25 @@
     >
       <v-list nav dense>
         <v-list-item-group v-model="group" active-class="deep-purple--text text--accent-4">
-          <v-list-item>
-            <v-list-item-title>
-              <v-img height="100%" width="80px" :src="logo"></v-img>
-            </v-list-item-title>
-          </v-list-item>
+          
+           <v-card :dark="nightMode" >
+             <v-card-text style="display:flex; align-items:center" >
+              <v-img height="100%" width="50px" :src="logo"></v-img>
+              <strong >Movie Review</strong>
+             </v-card-text>
+           </v-card>
+             
+          
+          
+            <v-text-field 
+            label="Search "
+            append-icon="mdi-magnify"
+            :dark="nightMode"
+            color="success">
+
+            </v-text-field>
+         
+         
 
           <v-list-item>
             <div>
@@ -51,6 +65,7 @@
           <v-list-item>
             <v-btn text small color="info" @click="dialog = !dialog">About</v-btn>
           </v-list-item>
+           
         </v-list-item-group>
       </v-list>
 

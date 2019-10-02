@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="{ 'night': theme, 'light': !theme }">
+  <div style="margin-top:50px" v-bind:class="{ 'night': theme, 'light': !theme }">
     <v-container grid-list-sm >
       <v-alert border="left" outlined color="blue" class="mt-4">
         <div class="title">Lorem Ipsum</div>
